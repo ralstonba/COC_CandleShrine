@@ -12,6 +12,8 @@
   _state = true;
  }
 
+ Candle::Candle(){}
+
  void Candle::on(){
   _state = false;
   digitalWrite(_pin, _state);

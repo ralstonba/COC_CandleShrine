@@ -12,6 +12,7 @@
  {
   public:
     Candle(byte pin);
+    Candle();
     void on();
     void off();
     void toggle();
