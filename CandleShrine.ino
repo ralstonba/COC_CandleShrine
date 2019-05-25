@@ -14,9 +14,10 @@
 */ 
 
 #include "CandleShrine.h"
-#include "Candle.h"
 
-CandleShrine candleShrine(53, 51, 49, 47, 45, 43, 41, 39);
+byte candlePins[] = {53, 51, 49, 47, 45, 43, 41, 39};
+byte inputPins[] = {1, 2, 3, 4, 5, 6, 7, 8};
+CandleShrine candleShrine(candlePins, inputPins);
 
 void setup() {
 }
