@@ -1,32 +1,28 @@
 /*
- * CandleShrine object header
- * Brendan Ralston, 5/25/19
- */
+   CandleShrine object header
+   Brendan Ralston, 5/25/19
+*/
 
- #ifndef CandleShrine_h
- #define CandleShrine_h
+#ifndef CandleShrine_h
+#define CandleShrine_h
 
- #include "Arduino.h"
- #include "Candle.h"
+#include "Arduino.h"
+#include "Candle.h"
+#include "Puzzle.h"
 
- class CandleShrine
- {
+class CandleShrine
+{
   public:
     // This is gross imo
     CandleShrine(
-      byte candle1Pin, 
-      byte candle2Pin, 
-      byte candle3Pin, 
-      byte candle4Pin, 
-      byte candle5Pin, 
-      byte candle6Pin, 
-      byte candle7Pin, 
-      byte candle8Pin
-      );
+      byte candlePins[],
+      byte inputPins[]
+    );
     void lightNext();
   private:
-    Candle _candles[];
+    Candle _candles[8];
+    Puzzle _puzzles[8];
     byte _currentCandle;
- };
+};
 
- #endif
+#endif

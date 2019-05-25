@@ -7,28 +7,13 @@
 #include "CandleShrine.h"
 #include "Candle.h"
 
-CandleShrine::CandleShrine(
-  byte candle1Pin,
-  byte candle2Pin,
-  byte candle3Pin,
-  byte candle4Pin,
-  byte candle5Pin,
-  byte candle6Pin,
-  byte candle7Pin,
-  byte candle8Pin
-) {
+CandleShrine::CandleShrine(byte candlePins[], byte inputPins[]) {
   _currentCandle = 0;
-  Candle candles[] = {
-    Candle(candle1Pin),
-    Candle(candle2Pin),
-    Candle(candle3Pin),
-    Candle(candle4Pin),
-    Candle(candle5Pin),
-    Candle(candle6Pin),
-    Candle(candle7Pin),
-    Candle(candle8Pin)
-  };
-  memcpy(_candles, candles, 8);
+
+  for(int i = 0; i < 8; i++){
+    _candles[i] = Candle(candlePins[i]);
+    _puzzles[i] = Puzzle(inputPins[i]);
+  }
 }
 
 void CandleShrine::lightNext() {
