@@ -9,24 +9,24 @@
  Candle::Candle(byte pin){
   pinMode(pin, OUTPUT);
   _pin = pin;
-  _status = false;
+  _state = false;
  }
 
  void Candle::on(){
-  _status = true;
-  digitalWrite(_pin, _status);
+  _state = true;
+  digitalWrite(_pin, _state);
  }
 
  void Candle::off(){
-  _status = false;
-  digitalWrite(_pin, _status);
+  _state = false;
+  digitalWrite(_pin, _state);
  }
 
  void Candle::toggle(){
-  _status = !_status;
-  digitalWrite(_pin, _status);
+  _state = !_state;
+  digitalWrite(_pin, _state);
  }
 
  bool Candle::isLit(){
-  return _status;
+  return _state;
  }
