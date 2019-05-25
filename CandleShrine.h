@@ -17,3 +17,5 @@
   private:
     Candle candles[8];
  }
+
+ #endif
