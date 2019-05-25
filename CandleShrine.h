@@ -13,9 +13,20 @@
  {
   public:
     // This is gross imo
-    CandleShrine(byte candle1Pin, byte candle2Pin, byte candle3Pin, byte candle4Pin, byte candle5Pin, byte candle6Pin, byte candle7Pin, byte candle8Pin);
+    CandleShrine(
+      byte candle1Pin, 
+      byte candle2Pin, 
+      byte candle3Pin, 
+      byte candle4Pin, 
+      byte candle5Pin, 
+      byte candle6Pin, 
+      byte candle7Pin, 
+      byte candle8Pin
+      );
+    void lightNext();
   private:
-    Candle candles[8];
+    Candle _candles[8];
+    byte _currentCandle;
  }
 
  #endif
