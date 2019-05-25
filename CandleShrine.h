@@ -27,6 +27,6 @@
   private:
     Candle _candles[8];
     byte _currentCandle;
- }
+ };
 
  #endif

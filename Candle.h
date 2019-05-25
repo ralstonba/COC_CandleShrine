@@ -19,6 +19,6 @@
   private:
     byte _pin;
     bool _state;
- }
+ };
 
  #endif
