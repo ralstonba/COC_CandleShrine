@@ -21,3 +21,7 @@
  void Puzzle::isSolved(bool solved){
   _solved = solved;
  }
+
+ byte Puzzle::getPin(){
+  return _pin;
+ }

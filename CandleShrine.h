@@ -13,12 +13,12 @@
 class CandleShrine
 {
   public:
-    // This is gross imo
     CandleShrine(
       byte candlePins[],
       byte inputPins[]
     );
     void lightNext();
+    void update();
   private:
     Candle _candles[8];
     Puzzle _puzzles[8];

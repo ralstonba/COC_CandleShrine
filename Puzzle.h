@@ -15,6 +15,7 @@
     Puzzle();
     bool isSolved();
     void isSolved(bool solved);
+    byte getPin();
   private:
     byte _pin;
     bool _solved;

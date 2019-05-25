@@ -23,7 +23,6 @@ void setup() {
 }
 
 // the loop function runs over and over again forever
-void loop() {                     
-  candleShrine.lightNext();
-  delay(1000);
+void loop() {    
+  candleShrine.update();
 }
