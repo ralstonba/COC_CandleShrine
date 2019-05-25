@@ -25,7 +25,7 @@
       );
     void lightNext();
   private:
-    Candle _candles[8];
+    Candle _candles[];
     byte _currentCandle;
  };
 

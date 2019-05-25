@@ -7,25 +7,6 @@
 #include "CandleShrine.h"
 #include "Candle.h"
 
-class CandleShrine
-{
-  public:
-    CandleShrine(
-      byte candle1Pin,
-      byte candle2Pin,
-      byte candle3Pin,
-      byte candle4Pin,
-      byte candle5Pin,
-      byte candle6Pin,
-      byte candle7Pin,
-      byte candle8Pin
-    );
-    void lightNext();
-  private:
-    Candle _candles[];
-    byte _currentCandle;
-}
-
 CandleShrine::CandleShrine(
   byte candle1Pin,
   byte candle2Pin,
@@ -36,7 +17,8 @@ CandleShrine::CandleShrine(
   byte candle7Pin,
   byte candle8Pin
 ) {
-  _candles[8] = {
+  _currentCandle = 0;
+  Candle candles[] = {
     Candle(candle1Pin),
     Candle(candle2Pin),
     Candle(candle3Pin),
@@ -45,12 +27,12 @@ CandleShrine::CandleShrine(
     Candle(candle6Pin),
     Candle(candle7Pin),
     Candle(candle8Pin)
-  }
-  _currentCandle = 0;
+  };
+  memcpy(_candles, candles, 8);
 }
 
-CandleShrine::lightNext(){
-  if(_currentCandle <= 8){
+void CandleShrine::lightNext() {
+  if (_currentCandle <= 8) {
     _candles[++_currentCandle].on();
   }
 }
